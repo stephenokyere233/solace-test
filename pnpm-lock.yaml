@@ -108,9 +108,21 @@ importers:
       '@emotion/styled':
         specifier: ^11.11.5
         version: 11.11.5(@emotion/react@11.11.4)(@types/react@18.3.3)(react@18.3.1)
+      '@mui/base':
+        specifier: 5.0.0-beta.40
+        version: 5.0.0-beta.40(@types/react@18.3.3)(react-dom@18.3.1)(react@18.3.1)
       '@mui/material':
         specifier: ^5.15.20
         version: 5.15.20(@emotion/react@11.11.4)(@emotion/styled@11.11.5)(@types/react@18.3.3)(react-dom@18.3.1)(react@18.3.1)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      jotai:
+        specifier: ^2.8.3
+        version: 2.8.3(@types/react@18.3.3)(react@18.3.1)
+      lucide-react:
+        specifier: ^0.396.0
+        version: 0.396.0(react@18.3.1)
       next:
         specifier: 14.2.4
         version: 14.2.4(react-dom@18.3.1)(react@18.3.1)
@@ -123,6 +135,9 @@ importers:
       react-hook-form:
         specifier: ^7.52.0
         version: 7.52.0(react@18.3.1)
+      tailwind-merge:
+        specifier: ^2.3.0
+        version: 2.3.0
     devDependencies:
       '@types/node':
         specifier: ^20
@@ -5385,6 +5400,22 @@ packages:
     hasBin: true
     dev: true
 
+  /jotai@2.8.3(@types/react@18.3.3)(react@18.3.1):
+    resolution: {integrity: sha512-pR4plVvdbzB6zyt7VLLHPMAkcRSKhRIvZKd+qkifQLa3CEziEo1uwZjePj4acTmQrboiISBlYSdCz3gWcr1Nkg==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@types/react': '>=17.0.0'
+      react: '>=17.0.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react:
+        optional: true
+    dependencies:
+      '@types/react': 18.3.3
+      react: 18.3.1
+    dev: false
+
   /js-sdsl@4.2.0:
     resolution: {integrity: sha512-dyBIzQBDkCqCu+0upx25Y2jGdbTGxE9fshMsCdK0ViOongpV+n5tXRcZY9v7CaVQ79AGS9KA1KHtojxiM7aXSQ==}
     dev: true
@@ -5578,6 +5609,14 @@ packages:
     dependencies:
       yallist: 4.0.0
     dev: true
+
+  /lucide-react@0.396.0(react@18.3.1):
+    resolution: {integrity: sha512-N/zP+9vEfEYHiMWMpjwH/M5diaV0e4UFe07BpgdzaRYce5QvXi87hixf7F0Xqdr3zuX/9u7H/2D4MVXIK22O0A==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.3.1
+    dev: false
 
   /magic-string@0.30.5:
     resolution: {integrity: sha512-7xlpfBaQaP/T6Vh8MO/EqXSW5En6INHEvEXQiuff7Gku0PWjU3uf6w/j9o7O+SpB5fOAkrI5HeoNgwjEO0pFsA==}
@@ -7097,6 +7136,12 @@ packages:
       '@pkgr/core': 0.1.1
       tslib: 2.6.3
     dev: true
+
+  /tailwind-merge@2.3.0:
+    resolution: {integrity: sha512-vkYrLpIP+lgR0tQCG6AP7zZXCTLc1Lnv/CCRT3BqJ9CZ3ui2++GPaGb1x/ILsINIMSYqqvrpqjUFsMNLlW99EA==}
+    dependencies:
+      '@babel/runtime': 7.24.7
+    dev: false
 
   /tailwindcss@3.4.4:
     resolution: {integrity: sha512-ZoyXOdJjISB7/BcLTR6SEsLgKtDStYyYZVLsUtWChO4Ps20CBad7lfJKVDiejocV4ME1hLmyY0WJE3hSDcmQ2A==}

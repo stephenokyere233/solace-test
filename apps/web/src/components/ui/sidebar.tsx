@@ -26,17 +26,17 @@ export default function SideBar() {
     },
   ];
   return (
-    <aside className="border max-w-[100px] bg-[#000] flex flex-col justify-center gap-5 px-5">
+    <aside className="border max-w-[100px] bg-[#fff] flex flex-col items-center py-5 gap-10 px-5">
       <Link href="/">
-        <Image src="/assets/logo.svg" alt="Logo" width={100} height={100} />
+        <Image src="/assets/logo.svg" alt="Logo" width={40} height={40} />
       </Link>
       <nav>
-        <ul className="flex flex-col gap-5">
+        <ul className="flex flex-col gap-8">
           {links.map((link) => {
             return (
               <li key={link.name}>
-                <Link href="#">
-                  <Image src={link.icon} alt={link.name} width={100} height={100} />
+                <Link href={link.path}>
+                  <Image src={link.icon} alt={link.name} width={25} height={25} />
                 </Link>
               </li>
             );
