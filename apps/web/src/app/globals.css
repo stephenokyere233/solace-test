@@ -4,7 +4,7 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: #fafafa;
+  --background: #fafafa;
 }
 
 body {

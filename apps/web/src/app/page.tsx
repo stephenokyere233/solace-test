@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className="flex w-full h-screen">
       <Sidebar />
-      <section className="flex-1 h-full overflow-y-scroll">
+      <section className="flex-1 h-full overflow-y-scroll p-5">
         <DashHeader />
         <div className="w-full flex">
           <ProfileCard />
