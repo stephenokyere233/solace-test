@@ -32,16 +32,21 @@ const DashHeader = () => {
             separator={<ChevronRight size={20} color="#459AFF" />}
             aria-label="breadcrumb"
           >
-            <Link className="hover:underline" key="1" color="inherit" href="#">
+            <Link className="hover:underline text-sm" key="1" color="inherit" href="#">
               Dashboard
             </Link>
-            <Link className="hover:underline" key="2" color="inherit" href="#">
+            <Link className="hover:underline text-sm" key="2" color="inherit" href="#">
               HR Manage
             </Link>
-            <Link className="hover:underline" key="2" color="inherit" href="#">
+            <Link className="hover:underline text-sm" key="2" color="inherit" href="#">
               Employees
             </Link>
-            <Link className="hover:underline" key="2" color="inherit" href="#">
+            <Link
+              className="hover:underline text-sm text-[#003FAD] "
+              key="2"
+              color="inherit"
+              href="#"
+            >
               John Smith profile
             </Link>
           </Breadcrumbs>

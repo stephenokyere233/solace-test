@@ -14,6 +14,7 @@ type FieldName =
   | "dateOfBirth"
   | "gender"
   | "nationality"
+  | "additionalNationality"
   | "passportNo"
   | "passportIssueDate"
   | "passportExpiryDate"
@@ -22,7 +23,7 @@ type FieldName =
 
 interface Field {
   label: string;
-  name: FieldName;
+  name: FieldName | "null";
 }
 
 interface FormValues {
@@ -36,6 +37,7 @@ interface FormValues {
   dateOfBirth: string;
   gender: string;
   nationality: string;
+  additionalNationality: string;
   passportNo: string;
   passportIssueDate: string;
   passportExpiryDate: string;
@@ -56,6 +58,7 @@ const BasicInformationCard = () => {
     dateOfBirth: "01/04/1980",
     gender: "Male",
     nationality: "Egyptian",
+    additionalNationality: "-",
     passportNo: "A135464",
     passportIssueDate: "01/04/1980",
     passportExpiryDate: "01/04/1980",
@@ -83,6 +86,7 @@ const BasicInformationCard = () => {
     { label: "National ID Number", name: "nationalId" },
     { label: "National ID Expiry Date", name: "nationalIdExpiry" },
     { label: "Title", name: "title" },
+    { label: "", name: "null" },
     { label: "First Name", name: "firstName" },
     { label: "Father Name", name: "fatherName" },
     { label: "Grand Father Name", name: "grandFatherName" },
@@ -90,11 +94,15 @@ const BasicInformationCard = () => {
     { label: "Date of Birth", name: "dateOfBirth" },
     { label: "Gender", name: "gender" },
     { label: "Nationality", name: "nationality" },
+    { label: "Additional Nationality", name: "additionalNationality" },
     { label: "Passport Number", name: "passportNo" },
     { label: "Passport Issue Date", name: "passportIssueDate" },
     { label: "Passport Expiry Date", name: "passportExpiryDate" },
+    { label: "", name: "null" },
     { label: "Marital Status", name: "maritalStatus" },
     { label: "Dependencies", name: "dependencies" },
+    { label: "", name: "null" },
+    { label: "", name: "null" },
   ];
 
   return (
@@ -107,7 +115,7 @@ const BasicInformationCard = () => {
               className="bg-[#0F6CBD] px-4 rounded-lg w-[100px] p-2 text-sm text-white font-semibold "
               onClick={handleCancelClick}
             >
-              Cancel
+              Save
             </Button>
           ) : (
             <Button
@@ -125,34 +133,30 @@ const BasicInformationCard = () => {
                 <label htmlFor={field.name} className="text-[14px] text-[#737791]">
                   {field.label}
                 </label>
-                <OutlinedInput
-                  {...register(field.name)}
-                  id={field.name}
-                  className="rounded-xl hover:border-blue-500"
-                  aria-describedby="outlined-weight-helper-text"
-                  placeholder={field.label}
-                  inputProps={{
-                    "aria-label": field.label,
-                  }}
-                />
+                {field.name === "null" ? (
+                  <div className="invisible" />
+                ) : (
+                  <OutlinedInput
+                    {...register(field.name as FieldName)}
+                    id={field.name}
+                    className="rounded-xl hover:border-blue-500"
+                    aria-describedby="outlined-weight-helper-text"
+                    placeholder={field.label}
+                    inputProps={{
+                      "aria-label": field.label,
+                    }}
+                  />
+                )}
               </FormControl>
             ))}
-            <div className=" flex justify-end items-end">
-              <Button
-                type="submit"
-                className="bg-[#0F6CBD] h-[45px] rounded-lg p-2 text-white font-semibold w-[150px]"
-              >
-                Save
-              </Button>
-            </div>
           </form>
         ) : (
           <div className="grid-cols-4 grid gap-5">
             {fields.map((field, index) => (
               <div key={index} className="flex flex-col gap-2">
-                <p className="text-[14px] text-[#737791]">{field.label}:</p>
+                <p className="text-[14px] text-[#737791]">{field.label}</p>
                 <p className="font-semibold text-[#151D48]">
-                  {defaultValues[field.name]}
+                  {defaultValues[field.name as FieldName]}
                 </p>
               </div>
             ))}

@@ -26,7 +26,7 @@ export default function SideBar() {
     },
   ];
   return (
-    <aside className="border max-w-[100px] bg-[#fff] flex flex-col items-center py-5 gap-10 px-5">
+    <aside className="border max-w-[100px] border-[#E7EAEE] bg-[#fff] flex flex-col items-center py-5 gap-10 px-5">
       <Link href="/">
         <Image src="/assets/logo.svg" alt="Logo" width={40} height={40} />
       </Link>

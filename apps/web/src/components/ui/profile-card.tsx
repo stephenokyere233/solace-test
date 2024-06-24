@@ -8,7 +8,7 @@ import Tab from "./tabs";
 
 const ProfileCard = () => {
   return (
-    <Card className="rounded-3xl p-5 min-w-[350px] h-max">
+    <Card className="rounded-3xl p-5 min-w-[400px] h-max">
       <CardContent className="space-y-2">
         <div className="relative w-max pb-4">
           <Image
@@ -30,7 +30,7 @@ const ProfileCard = () => {
         <h2 className="text-[20px] font-semibold">John Smith</h2>
         <p className="text-[#737791]">Senior Product Manager</p>
         <Divider className="py-2" />
-        <TabsList className="flex flex-col gap-2 w-full">
+        <TabsList className="flex flex-col gap-2 pt-4 w-full">
           {TABS.map((tab, index) => (
             <Tab key={tab.value} value={index} label={tab.name} />
           ))}
