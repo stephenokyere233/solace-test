@@ -8,7 +8,7 @@ const DashContent = () => {
   return (
     <Tabs className="flex gap-10 w-full" defaultValue={0}>
       <ProfileCard />
-      <div className="flex-1 min-h-[calc(100vh-150px)] w-full">
+      <div className="flex-1 h-[calc(100vh-140px)] overflow-y-scroll w-full">
         {TABS.map((tab, index) => (
           <TabPanel key={tab.value} value={index}>
             {tab.content}

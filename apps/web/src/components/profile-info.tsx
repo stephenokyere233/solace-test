@@ -1,14 +1,12 @@
+import { Button } from "@mui/base/Button";
 import { Card, CardContent } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import BasicInformationCard from "./basic-info.card";
 
 export default function ProfileInfo() {
   return (
-    <div className="space-y-10">
-      <Card className="rounded-3xl p-5 min-w-[350px] h-max">
-        <CardContent className="space-y-2">
-          <h2 className="text-[20px] font-semibold">Basic Information</h2>
-        </CardContent>
-      </Card>
+    <div className="space-y-10 pb-20">
+      <BasicInformationCard />
       <Card className="rounded-3xl p-5 min-w-[350px] h-max">
         <CardContent className="space-y-2">
           <h2 className="text-[20px] font-semibold">Contact Information</h2>
@@ -16,7 +14,9 @@ export default function ProfileInfo() {
       </Card>
       <Card className="rounded-3xl p-5 min-w-[350px] h-max">
         <CardContent className="space-y-2">
-          <h2 className="text-[20px] font-semibold">Emergency Contact Information</h2>
+          <div>
+            <h2 className="text-[20px] font-semibold">Emergency Contact Information</h2>
+          </div>
         </CardContent>
       </Card>
       <Card className="rounded-3xl p-5 min-w-[350px] h-max">
