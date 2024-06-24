@@ -6,6 +6,19 @@
   --foreground-rgb: 0, 0, 0;
   --background: #fafafa;
 }
+html .MuiCard-root {
+  @apply shadow-[0px_4px_20px_0px_#eeeeee80] border-[#F8F9FA] border;
+}
+.hide-scrollbar {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
 
 body {
   color: rgb(var(--foreground-rgb));
