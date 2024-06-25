@@ -1,4 +1,3 @@
-"use client";
 import { CardContent, Card, Divider } from "@mui/material";
 import Image from "next/image";
 import React from "react";

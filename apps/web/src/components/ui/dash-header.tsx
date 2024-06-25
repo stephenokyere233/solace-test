@@ -4,25 +4,9 @@ import Link from "next/link";
 import Avatar from "@mui/material/Avatar";
 import { Breadcrumbs, Stack } from "@mui/material";
 import { ChevronRight } from "lucide-react";
+import { HEADER } from "@/lib/constants";
 
 const DashHeader = () => {
-  const links = [
-    {
-      icon: "/assets/icons/bell.svg",
-      name: "link 1",
-      path: "#",
-    },
-    {
-      icon: "/assets/icons/mail.svg",
-      name: "link 2",
-      path: "#",
-    },
-    {
-      icon: "/assets/icons/settings.svg",
-      name: "link 3",
-      path: "#",
-    },
-  ];
   return (
     <header className="flex justify-between">
       <div className="space-y-2">
@@ -32,28 +16,21 @@ const DashHeader = () => {
             separator={<ChevronRight size={20} color="#459AFF" />}
             aria-label="breadcrumb"
           >
-            <Link className="hover:underline text-sm" key="1" color="inherit" href="#">
-              Dashboard
-            </Link>
-            <Link className="hover:underline text-sm" key="2" color="inherit" href="#">
-              HR Manage
-            </Link>
-            <Link className="hover:underline text-sm" key="2" color="inherit" href="#">
-              Employees
-            </Link>
-            <Link
-              className="hover:underline text-sm text-[#003FAD] "
-              key="2"
-              color="inherit"
-              href="#"
-            >
-              John Smith profile
-            </Link>
+            {HEADER.BREADCRUMBS.map((item, index) => (
+              <Link
+                className={`hover:underline text-sm ${index === HEADER.BREADCRUMBS.length - 1 ? "text-[#003FAD] " : ""}`}
+                key="1"
+                color="inherit"
+                href={item.path}
+              >
+                {item.name}
+              </Link>
+            ))}
           </Breadcrumbs>
         </Stack>
       </div>
       <ul className="flex gap-10 items-center">
-        {links.map((link) => {
+        {HEADER.NAV_ITEMS.map((link) => {
           return (
             <li key={link.name}>
               <Link href={link.path}>
@@ -62,7 +39,7 @@ const DashHeader = () => {
             </li>
           );
         })}
-        <Avatar alt="Stephen Okyere" src="/assets/profile.png" />
+        <Avatar alt="John Smith" src="/assets/profile.png" />
       </ul>
     </header>
   );
