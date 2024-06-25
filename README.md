@@ -48,7 +48,6 @@ If you want to run each part individually, navigate to the respective directory 
 Start the backend server:
 
 ```bash
-Copy code
 cd apps/api
 pnpm dev
 ```
@@ -58,7 +57,6 @@ The backend will be running at http://localhost:3000.
 Start the frontend server:
 
 ```bash
-Copy code
 cd apps/web
 pnpm dev
 ```
@@ -77,7 +75,6 @@ pnpm dev --filter="api"
 Start only the frontend:
 
 ```bash
-Copy code
 pnpm dev --filter="web"
 ```
 
