@@ -6,7 +6,7 @@ export default function Tab({ value, label }: { value: number | string; label: s
     <BaseTab
       slotProps={{
         root: ({ selected, disabled }) => ({
-          className: `font-sans text-start ${
+          className: `text-start text-[18px] ${
             selected
               ? "bg-[#F4F8FE] text-[#0058A9]"
               : "text-black bg-transparent hover:bg-[#F4F8FE] hover:text-[#0058A9]"

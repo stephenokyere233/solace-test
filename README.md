@@ -1,59 +1,130 @@
----
-name: Monorepo with Turborepo
-slug: monorepo-turborepo
-description: Learn to implement a monorepo with a single Next.js site that has installed two local packages.
-framework: Next.js
-useCase:
-  - Monorepos
-  - Documentation
-css: Tailwind
-deployUrl: https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fsolutions%2Fmonorepo&project-name=monorepo&repository-name=monorepo&root-directory=apps%2Fapp
-demoUrl: https://solutions-monorepo.vercel.sh
-relatedTemplates:
-  - monorepo-nx
-  - turborepo-next-basic
-  - turborepo-sveltekit-starter
----
+## Project Overview
 
-# Monorepo
+This project consists of a backend built with NestJS and a frontend built with Next.js (React). It is organized as a monorepo using Turborepo and uses PNPM as the package manager.
 
-This is a monorepo example with a single Next.js site ([./apps/app](./apps/app)) that has installed two local packages:
+- Backend: NestJS
+- Frontend: Next.js (React)
+- Package Manager: PNPM
+- Monorepo Tool: Turborepo
 
-- [./packages/ui](./packages/ui): Exports UI components that use TypeScript and Tailwind CSS and is compiled by SWC.
-- [./packages/utils](./packages/utils): Exports utility functions that use TypeScript.
+## Getting Started
 
-The monorepo is using [Turborepo](https://turborepo.org/) and [pnpm workspaces](https://pnpm.io/workspaces) to link packages together.
+# Prerequisites
 
-For more examples on monorepos check out the [official Turborepo examples](https://github.com/vercel/turborepo/tree/main/examples).
+Ensure you have the following installed on your machine:
 
-## Demo
+- Node.js (version 18 or higher recommended)
+- PNPM
 
-https://solutions-monorepo.vercel.sh
+Installation
 
-## How to Use
-
-You can choose from one of the following two methods to use this repository:
-
-### One-Click Deploy
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/monorepo&project-name=monorepo&repository-name=monorepo&root-directory=apps/app&install-command=pnpm%20install&build-command=cd%20..%2F..%20%26%26%20pnpm%20build%20--filter%3Dapp...&ignore-command=npx%20turbo-ignore)
-
-### Clone and Deploy
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [pnpm](https://pnpm.io/installation) to bootstrap the example:
+- Clone the repository:
 
 ```bash
-pnpm create next-app --example https://github.com/vercel/examples/tree/main/solutions/monorepo monorepo
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
 ```
 
-Next, run `app` in development mode:
+Install the packages:
+
+```bash
+pnpm install
+```
+
+Running the Project
+Running Both Backend and Frontend
+To run both the backend and frontend together, simply run the following command in the root directory:
 
 ```bash
 pnpm dev
 ```
 
-The app should be up and running at http://localhost:3000.
+The backend will be running at http://localhost:3000.
+The GraphQL playground will be available at http://localhost:3000/graphql.
+The frontend will be running at http://localhost:3005.
+Running Each Individually
+If you want to run each part individually, navigate to the respective directory and run the following commands:
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=monorepo-example) ([Documentation](https://nextjs.org/docs/deployment)).
+Start the backend server:
+
+```bash
+Copy code
+cd apps/api
+pnpm dev
+```
+
+The backend will be running at http://localhost:3000.
+
+Start the frontend server:
+
+```bash
+Copy code
+cd apps/web
+pnpm dev
+```
+
+The frontend will be running at http://localhost:3005.
+
+Running a Single Part from the Root
+You can also run a single part from the root directory using the --filter option:
+
+Start only the backend:
+
+```bash
+pnpm dev --filter="api"
+```
+
+Start only the frontend:
+
+```bash
+Copy code
+pnpm dev --filter="web"
+```
+
+Directory Structure
+The project has the following directory structure:
+
+```lua
+your-repo/
+│
+├── apps/
+│ ├── api/
+│ │ ├── src/
+│ │ │ ├── modules/
+│ │ │ ├── main.ts
+│ │ │ └── ...
+│ │ ├── test/
+│ │ ├── nest-cli.json
+│ │ ├── package.json
+│ │ └── ...
+│ │
+│ ├── web/
+│ │ ├── src/
+│ │ │ ├── components/
+│ │ │ ├── app/
+│ │ │ └── ...
+│ │ ├── public/
+│ │ ├── next.config.mjs
+│ │ ├── package.json
+│ │ └── ...
+│
+├── .gitignore
+├── pnpm-workspace.yaml
+├── package.json
+└── README.md
+```
+
+Useful Commands
+Install dependencies: pnpm install
+Start both backend and frontend: pnpm dev
+Start the backend only:
+
+```
+cd apps/api && pnpm dev or pnpm dev --filter="api"
+```
+
+Start the frontend only:
+
+```
+ cd apps/web && pnpm dev or pnpm dev --filter="web"
+```
